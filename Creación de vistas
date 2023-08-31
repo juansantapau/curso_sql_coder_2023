@@ -1,0 +1,5 @@
+CREATE VIEW vistaproduccion AS
+    SELECT nomina.apellido, nomina.nombre, asistencia.id_proceso, asistencia.kg_producidos, asistencia.fecha_vig
+    FROM nomina
+    INNER JOIN 	asistencia on nomina.id_operario;
+
