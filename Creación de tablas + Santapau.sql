@@ -69,6 +69,18 @@ CREATE TABLE `ventas` (
   CONSTRAINT `ventas_ibfk_2` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id_producto`)
 );
 
+CREATE TABLE proveedores (
+    id_proveedor INT PRIMARY KEY,
+    nombre VARCHAR(255),
+    direccion VARCHAR(255),
+    telefono VARCHAR(15)
+);
 
+CREATE TABLE clientes (
+    id_cliente INT PRIMARY KEY,
+    nombre VARCHAR(255),
+    direccion VARCHAR(255),
+    telefono VARCHAR(15),
+    email VARCHAR(255)
+);
 
--- Dump completed on 2023-07-22 16:14:29
