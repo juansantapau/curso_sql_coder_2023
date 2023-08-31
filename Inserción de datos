@@ -1,0 +1,59 @@
+INSERT INTO clientes (id_cliente, nombre, direccion, telefono, email)
+VALUES
+    (1, 'Juan Pérez', 'Calle 123, New York', '1111111111', 'juan@example.com'),
+    (2, 'María González', 'Avenida 456, Hong Kong', '2222222222', 'maria@example.com'),
+    (3, 'Luis Martínez', 'Calle 789, Buenos Aires', '3333333333', 'luis@example.com'),
+    (4, 'Ana Rodríguez', 'Avenida 101, Jamaica', '4444444444', 'ana@example.com'),
+    (5, 'Carlos Sánchez', 'Calle 202, New York', '5555555555', 'carlos@example.com'),
+    (6, 'Sofía López', 'Avenida 303, Hong Kong', '6666666666', 'sofia@example.com'),
+    (7, 'Pedro Ramírez', 'Calle 404, Buenos Aires', '7777777777', 'pedro@example.com'),
+    (8, 'Laura Castro', 'Avenida 505, Jamaica', '8888888888', 'laura@example.com'),
+    (9, 'Diego Díaz', 'Calle 606, New York', '9999999999', 'diego@example.com'),
+    (10, 'Isabel Fernández', 'Avenida 707, Hong Kong', '1234567890', 'isabel@example.com');
+
+INSERT INTO proveedores (id_proveedor, nombre, direccion, telefono)
+VALUES
+    (1, 'OceanMarine Fishery', 'Calle Marítima 123, Puerto A', '1111111111'),
+    (2, 'PescaMar S.A.', 'Avenida del Pescador 456, Puerto B', '2222222222'),
+    (3, 'MarVida Seafoods', 'Calle Acuática 789, Puerto C', '3333333333'),
+    (4, 'PescaBrisa Ltda.', 'Avenida Pescadores 101, Puerto D', '4444444444'),
+    (5, 'AquaMarine Supply', 'Calle del Mar 202, Puerto E', '5555555555'),
+    (6, 'MarítimoFresco Export', 'Avenida Oceanica 303, Puerto F', '6666666666'),
+    (7, 'PescaOcéano Global', 'Calle Marina 404, Puerto G', '7777777777'),
+    (8, 'Marinos Sostenibles', 'Avenida Costera 505, Puerto H', '8888888888'),
+    (9, 'PescaNáutica Solutions', 'Calle Portuaria 606, Puerto I', '9999999999'),
+    (10, 'OceánicoMar Pesquerías', 'Avenida Pesquera 707, Puerto J', '1234567890');
+    
+INSERT INTO ventas (id_venta, id_producto, fecha_venta, cantidad_vendida, fecha_fact, fecha_cobr, id_cliente)
+VALUES
+    (1, 5, '2023-08-01', 101, '2023-08-02', '2023-08-03', 1),
+    (2, 3, '2023-08-02', 102, '2023-08-03', '2023-08-04', 2),
+    (3, 2, '2023-08-03', 103, '2023-08-04', '2023-08-05', 3),
+    (4, 8, '2023-08-04', 104, '2023-08-05', '2023-08-06', 4),
+    (5, 6, '2023-08-05', 105, '2023-08-06', '2023-08-07', 5),
+    (6, 1, '2023-08-06', 106, '2023-08-07', '2023-08-08', 6),
+    (7, 4, '2023-08-07', 107, '2023-08-08', '2023-08-09', 7),
+    (8, 7, '2023-08-08', 108, '2023-08-09', '2023-08-10', 8),
+    (9, 9, '2023-08-09', 109, '2023-08-10', '2023-08-11', 9),
+    (10, 2, '2023-08-10', 110, '2023-08-11', '2023-08-12', 10);
+
+INSERT INTO produccion_del_dia (id_produccion, id_asistencia, id_producto, fecha_elaborado, cantidad, id_mp)
+VALUES
+    (2, 11, 1, '2023-08-29', 128, 2),
+	(3, 18, 8, '2023-08-29', 228, 3),
+    (4, 19, 9, '2023-08-29', 528, 4),
+	(5, 32, 5, '2023-08-29', 428, 5),
+    (6, 23, 4, '2023-08-29', 328, 5);
+
+INSERT INTO materiaprima (id_mp, nombre, empaque, cantidad, lote, fecha_compra, precio_kg, kg_comprados, id_proveedor)
+VALUES
+    (1, 'Langostino', 'Cajon', 100, 123, '2023-08-05', 2, 50, 1),
+    (2, 'Langostino', 'Cajon', 200, 456, '2023-08-06', 2, 30, 2),
+    (3, 'Langostino', 'Cajon', 150, 789, '2023-08-07', 2, 70, 1),
+    (4, 'Langostino', 'Cajon', 300, 101, '2023-08-08', 2, 45, 3),
+    (5, 'Langostino', 'Cajon', 250, 202, '2023-08-09', 2, 25, 2),
+    (6, 'Langostino', 'Cajon', 160, 808, '2023-08-05', 2, 55, 1),
+    (7, 'Langostino', 'Cajon', 200, 909, '2023-08-06', 2, 50, 2),
+    (8, 'Langostino', 'Cajon', 140, 1010, '2023-08-07', 2, 65, 3),
+    (9, 'Langostino', 'Cajon', 180, 1111, '2023-08-08', 2, 45, 4),
+    (10, 'Langostino', 'Cajon', 220, 1212, '2023-08-09', 2, 60, 1);
