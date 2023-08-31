@@ -1,5 +1,15 @@
+
+/*Vista para ver la producción del personal en una fecha determinada*/
+
 CREATE VIEW vistaproduccion AS
     SELECT nomina.apellido, nomina.nombre, asistencia.id_proceso, asistencia.kg_producidos, asistencia.fecha_vig
     FROM nomina
     INNER JOIN 	asistencia on nomina.id_operario;
+
+
+/*Vista para ver el número de id de los operarios*/
+
+CREATE VIEW Empleados AS
+(SELECT nombre, apellido, id_operario
+FROM nomina);
 
