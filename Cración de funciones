@@ -1,0 +1,29 @@
+/* esta función da como resultado el cuil de la persona ingresando el número de identificación del operario */
+
+DELIMITER //
+CREATE FUNCTION 'traercuil' (idop INT)
+RETURNS BIGINT
+NO SQL
+BEGIN
+DECLARE resultado BIIGINT;
+SET RESULTADO = (SELECT CUIL
+FROM nomina
+WHERE id_operario = idop);
+RETURN resultado;
+END
+//
+
+/* la siguiente función trae la cantidad total producida por un operario,
+ se inserta en el parámetro el id de la persona */
+DELIMITER //
+CREATE FUNCTION cantidad_producida (idop INT)
+RETURNS INT
+NO SQL
+BEGIN
+DECLARE resultado int;
+SET resultado = (SELECT sum(kg_producidos)
+FROM asistencia
+WHERE id_operario = idop);
+RETURN resultado;
+END;
+//
