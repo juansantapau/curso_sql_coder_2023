@@ -1,0 +1,14 @@
+/* Debido a que los proveedores son seleccionados se crea una tabla log y un trigger para que se muestre un registro
+de la modificación*/
+
+CREATE TABLE log_proveedor (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fecha_hora TIMESTAMP,
+    evento VARCHAR(255));
+
+CREATE TRIGGER agregar_mod_prov
+AFTER INSERT ON proveedores
+for each row
+insert into log_proveedor (id,fecha_hora,evento)
+select max(id)+1,current_timestamp,new.id_proveedor
+from log_proveedor;
