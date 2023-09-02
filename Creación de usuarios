@@ -1,0 +1,13 @@
+/* el siguiente usuario se crea para tener permisos de solo lectura */
+
+CREATE USER 'usuario_lectura'@'localhost' IDENTIFIED BY '1234';
+GRANT SELECT ON proyectofinal.* TO 'usuario_lectura'@'localhost';
+SHOW GRANTS FOR 'usuario_lectura'@'localhost';
+
+/* el siguiente usuario se crea para tener permisos lectura, inserción y edición de registros.
+se revocan los permisos para eliminar registros*/
+
+CREATE USER 'solo_edit_insert'@'localhost' IDENTIFIED BY '1546';
+GRANT SELECT, INSERT, UPDATE ON proyectofinal.* TO 'solo_edit_insert'@'localhost';
+REVOKE DELETE ON proyectofinal.* FROM 'solo_edit_insert'@'localhost';
+SHOW GRANTS FOR 'solo_edit_insert'@'localhost';
